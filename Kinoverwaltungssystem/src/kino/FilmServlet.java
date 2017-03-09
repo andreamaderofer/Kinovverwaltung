@@ -41,7 +41,5 @@ public class FilmServlet extends HttpServlet {
 		String laenge = (String) request.getAttribute("Laenge");
 		String dreiD = (String) request.getAttribute("3D");
 		DBManager.Instance().getFilme();
-		
-		System.out.println("do nothing!!!!!");
 	}
 }

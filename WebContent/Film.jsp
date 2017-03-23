@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page import="models.Film"%>
+<%@ page import= "java.util.ArrayList"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,16 +21,46 @@ h1 {
 </head>
 <body>
 	<section class="container">
-	<div class="Film">
-		<h1>Filmverwaltung</h1>
-		Film aussuchen: <input type="text" name="Filmwahl" /></br></br>
-		Genre: <input type="text" name="Genre" /></br></br> 
-		Altersbegrenzung: <input type="text" name="Altersbegrenzung" /></br></br> 
-		Laenge: <input type="text" name="Laenge" /></br> </br> 
-		3D: <input type="text" name="3D" /></br> </br>
-		<p>
-			<input type="submit" name="submit" value="aendern" />
-		</p>
+	<div class="FilmServlet">
+			<table border=1>
+	 <colgroup>
+ 	 <col width=200>
+ 	 </colgroup>
+		<caption>
+			Woerter aus der Kategorie
+		</caption>
+		<tbody>
+		<% 
+			ArrayList<Film> filme=(ArrayList<Film>)session.getAttribute("liste");
+			int i = 0;
+			for(i = 0;i < filme.size();i++){	
+				if(filme.get(i) == null){
+					break;
+				}
+		%>
+			<tr align="center">
+				<td><%="Name:" %></td>
+				<td><input type="text" id="name"/><%=filme.get(i).getName()%></td>
+			</tr>
+			<tr align="center">
+				<td><%="Genre:" %></td>
+				<td><input type="text" id="name"/><%=filme.get(i).getGenre()%></td>
+			</tr>
+			<tr align="center">
+				<td><%="Alter:" %></td>
+				<td><input type="text" id="name"/><%=filme.get(i).getAltersfreigabe()%></td>
+			</tr>
+			<tr align="center">
+				<td><%="Dauer:" %></td>
+				<td><input type="text" id="name"/><%=filme.get(i).getDauerMin()%></td>
+			</tr>
+			<input type="submit" name="submit" value="update" />
+			<input type="submit" name="submit" value="delete" />
+		<% 	
+			}
+		%>
+		</tbody>
+	</table>
 	</div>
 	</section>
 </body>

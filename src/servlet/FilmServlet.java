@@ -35,11 +35,11 @@ public class FilmServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String filmwahl = (String) request.getAttribute("Filmwahl");
-		String genre = (String) request.getAttribute("Genre");
-		int altersbegrenzung = (int) request.getAttribute("Altersbegrenzung");
-		String laenge = (String) request.getAttribute("Laenge");
-		String dreiD = (String) request.getAttribute("3D");
+		String filmwahl = (String) request.getParameter("Filmwahl");
+		String genre = (String) request.getParameter("Genre");
+		int altersbegrenzung = Integer.parseInt(request.getParameter("Altersbegrenzung"));
+		String laenge = (String) request.getParameter("Laenge");
+		String dreiD = (String) request.getParameter("3D");
 		DBManager.Instance().getFilme();
 	}
 }

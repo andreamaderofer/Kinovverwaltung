@@ -158,4 +158,11 @@ public class Film {
 	public void save() {
 		DBManager.Instance().Save(this);
 	}
+	
+	/**
+	 * zum Loeschen des Filmes aus der Datenbank
+	 */
+	public void delete() {
+		DBManager.Instance().Delete(this);
+	}
 }

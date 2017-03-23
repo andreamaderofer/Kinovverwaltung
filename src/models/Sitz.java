@@ -138,4 +138,11 @@ public class Sitz {
 	public void save() {
 		DBManager.Instance().Save(this);
 	}
+	
+	/**
+	 * zum Loeschen des Sitzes aus der Datenbank
+	 */
+	public void delete() {
+		DBManager.Instance().Delete(this);
+	}
 }

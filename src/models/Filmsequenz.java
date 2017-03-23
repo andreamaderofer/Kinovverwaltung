@@ -137,4 +137,11 @@ public class Filmsequenz {
 	public void save() {
 		DBManager.Instance().Save(this);
 	}
+	
+	/**
+	 * zum Loeschen der Filmsequenz aus der Datenbank
+	 */
+	public void delete() {
+		DBManager.Instance().Delete(this);
+	}
 }

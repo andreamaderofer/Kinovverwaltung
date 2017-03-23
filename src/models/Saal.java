@@ -91,4 +91,11 @@ public class Saal {
 	public void save() {
 		DBManager.Instance().Save(this);
 	}
+	
+	/**
+	 * zum Loeschen des Saales aus der Datenbank
+	 */
+	public void delete() {
+		DBManager.Instance().Delete(this);
+	}
 }

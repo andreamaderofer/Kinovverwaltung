@@ -129,4 +129,11 @@ public class Sitzplatzreservierung {
 	public void save() {
 		DBManager.Instance().Save(this);
 	}
+	
+	/**
+	 * zum Loeschen der Sitzplatzreservierung aus der Datenbank
+	 */
+	public void delete() {
+		DBManager.Instance().Delete(this);
+	}
 }

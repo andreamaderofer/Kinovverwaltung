@@ -13,7 +13,7 @@ import main.DBManager;
 /**
  * Servlet implementation class Saal
  */
-@WebServlet("/Saal")
+@WebServlet("/Filmservlet")
 public class FilmServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Saalinfos</title>
+<title>Auswahl</title>
 <style>
 h1 {
 	margin-left: auto;
@@ -19,10 +19,7 @@ h1 {
 </head>
 <body>
 	<section class="container">
-	<div class="Film">
-		<h1>Freie Saalplaetze</h1>
-		Saalnummer: <input type="text" name="Filmwahl" /></br></br>
-			<input type="submit" name="submit" value="suchen" />
+
 	</div>
 	</section>
 </body>

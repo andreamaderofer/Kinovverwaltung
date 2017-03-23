@@ -2,6 +2,7 @@ package servlet;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import main.DBManager;
+import models.Film;
 
 /**
  * Servlet implementation class Saal
@@ -39,7 +41,10 @@ public class FilmServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession s = request.getSession();
-		s.setAttribute("liste", DBManager.Instance().getFilme());
+		
+		ArrayList<Film> liste = DBManager.Instance().getFilme();
+		
+		s.setAttribute("liste", liste);
 		response.sendRedirect("Film.jsp");
 	}
 }

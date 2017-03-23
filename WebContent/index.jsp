@@ -18,10 +18,9 @@ h1 {
 </style>
 </head>
 <body>
-	<section class="container">
-
-	</div>
-	</section>
+	<form action="FilmServlet" method="get">
+	<input type="submit" name="FilmeListe" value="Filme" />
+	</form>
 </body>
 </html>
 

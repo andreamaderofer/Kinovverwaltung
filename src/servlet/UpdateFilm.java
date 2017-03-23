@@ -43,7 +43,7 @@ public class UpdateFilm extends HttpServlet {
 		String name = (String) request.getParameter("name");
 		String genre = (String) request.getParameter("genre");
 		
-		int alter = 12;
+		int alter = 15;
 		int laenge = 90;
 		boolean dreiD = false;
 		

@@ -43,7 +43,6 @@ public class DeleteFilm extends HttpServlet {
 		ArrayList<Film> fListe = DBManager.Instance().getFilme();
 		int fID = Integer.parseInt(request.getParameter("id"));
 		
-		
 		for(Film f: fListe){
 			if(f.getID() == fID){
 				f.delete();

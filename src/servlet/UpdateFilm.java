@@ -17,7 +17,7 @@ import models.Film;
 /**
  * Servlet implementation class Saal
  */
-@WebServlet("/DeleteFilmServlet")
+@WebServlet("/UpdateFilmServlet")
 public class UpdateFilm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

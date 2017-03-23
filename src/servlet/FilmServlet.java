@@ -1,4 +1,4 @@
-package kino;
+package servlet;
 
 
 import java.io.IOException;

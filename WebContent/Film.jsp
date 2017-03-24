@@ -40,22 +40,24 @@ h1 {
 		%>
 			<tr align="center">
 				<td><%="Name:" %></td>
-				<td><input type="text" id="name"/><%=filme.get(i).getName()%></td>
+				<td><input type="text" id="name"><%=filme.get(i).getName()%></input></td>
 			</tr>
 			<tr align="center">
 				<td><%="Genre:" %></td>
-				<td><input type="text" id="name"/><%=filme.get(i).getGenre()%></td>
+				<td><input type="text" id="genre"><%=filme.get(i).getGenre()%></input></td>
 			</tr>
 			<tr align="center">
 				<td><%="Alter:" %></td>
-				<td><input type="text" id="name"/><%=filme.get(i).getAltersfreigabe()%></td>
+				<td><input type="text" id="alter"><%=filme.get(i).getAltersfreigabe()%></input></td>
 			</tr>
 			<tr align="center">
 				<td><%="Dauer:" %></td>
-				<td><input type="text" id="name"/><%=filme.get(i).getDauerMin()%></td>
+				<td><input type="text" id="dauer"><%=filme.get(i).getDauerMin()%></input></td>
 			</tr>
-			<input type="submit" name="submit" value="update" />
-			<input type="submit" name="submit" value="delete" />
+			<tr>
+				<input type="submit" name="submit" id="id" value="update" />
+				<input type="submit" name="submit" id="id" value="delete" />
+			</tr>
 		<% 	
 			}
 		%>

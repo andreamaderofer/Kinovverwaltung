@@ -120,7 +120,7 @@ public class Film {
 	 * 
 	 * @return  ob 3D oder nicht
 	 */
-	public boolean isIst3D() {
+	public boolean getIst3D() {
 		return ist3D;
 	}
 

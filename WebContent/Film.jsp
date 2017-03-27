@@ -16,7 +16,7 @@
 </head>
 <body>
 	<section class="container">
-	<div class="FilmServlet">
+	<form action="UpdateFilm" method="post">
 	
 	<font size=6xp><u>Folgende Filme gibt es:</u></font>
 	<table>
@@ -26,7 +26,7 @@
 		<% 
 			ArrayList<Film> filme=(ArrayList<Film>)session.getAttribute("liste");
 			int i = 0;
-			for(i = 0;i < filme.size();i++){	
+			for(i = 0;i < 1;i++){	
 				if(filme.get(i) == null){
 					break;
 				}
@@ -40,23 +40,26 @@
 				<td><input type = "text" id="genre"  value="<%=filme.get(i).getGenre()%>"/></td>
 			</tr>
 			<tr align="left">
-				<td><%="Alter:" %></td>
+				<td><%="Alter:"%></td>
 				<td><input type = "text" id="alter" value="<%=filme.get(i).getAltersfreigabe()%>"/></td>
 			</tr>
 			<tr align="left">
 				<td><%="Dauer:" %></td>
 				<td><input type="text" id="dauer" value="<%=filme.get(i).getDauerMin()%>"/></td>
 			</tr>
+			<tr align="left">
+				<td><%="3D:" %></td>
+				<td><input type="text" id="3D"value="<%=filme.get(i).getIst3D()%>"/></td>
+			</tr>
 			<tr>
-				<td align="right"><input type="submit" name="submit" id="id" value="update" /></td>
-				<td align="left"><input type="submit" name="submit" id="id" value="delete" /></td>
+				<td align="right"><input id="id" type="submit" name="update" value="update" /></td>
+				<td align="left"><input id="id" type="submit" name="delete"  value="delete" /></td>
 			</tr>
 		<% 	
 			}
 		%>
-		</tbody>
 	</table>
-	</div>
+	</form>
 	</section>
 </body>
 </html>

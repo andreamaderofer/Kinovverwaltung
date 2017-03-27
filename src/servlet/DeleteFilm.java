@@ -39,7 +39,7 @@ public class DeleteFilm extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		System.out.println("DeleteFilm");
 		ArrayList<Film> fListe = DBManager.Instance().getFilme();
 		int fID = Integer.parseInt(request.getParameter("id"));
 		

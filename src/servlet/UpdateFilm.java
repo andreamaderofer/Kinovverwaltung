@@ -15,9 +15,9 @@ import main.DBManager;
 import models.Film;
 
 /**
- * Servlet implementation class Saal
+ * Servlet implementation class Film
  */
-@WebServlet("/UpdateFilmServlet")
+@WebServlet("/UpdateFilm")
 public class UpdateFilm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -39,14 +39,14 @@ public class UpdateFilm extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		String name = (String) request.getParameter("name");
 		String genre = (String) request.getParameter("genre");
 		
-		int alter = 15;
-		int laenge = 90;
+		int alter = 0;
+		int laenge = 0;
 		boolean dreiD = false;
 		
+		System.out.println("UPDATE FILM");
 		try{
 			alter = Integer.parseInt(request.getParameter("alter"));
 			laenge = Integer.parseInt(request.getParameter("dauer"));
@@ -68,7 +68,7 @@ public class UpdateFilm extends HttpServlet {
 		}
 		
 		HttpSession s = request.getSession();
-		s.setAttribute("liste", DBManager.Instance().getFilme());
+		s.setAttribute("liste", fListe);
 		response.sendRedirect("Film.jsp");
 	}
 }

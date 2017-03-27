@@ -98,7 +98,7 @@ public class DBManager {
 				stat.setString(2, fi.getName());
 				stat.setString(3, fi.getGenre());
 				stat.setInt(4, fi.getAltersfreigabe());
-				stat.setBoolean(5, fi.isIst3D());
+				stat.setBoolean(5, fi.getIst3D());
 				stat.setInt(6, fi.getDauerMin());
 				stat.execute();
 
@@ -127,7 +127,7 @@ public class DBManager {
 				stat.setString(1, fi.getName());
 				stat.setString(2, fi.getGenre());
 				stat.setInt(3, fi.getAltersfreigabe());
-				stat.setBoolean(4, fi.isIst3D());
+				stat.setBoolean(4, fi.getIst3D());
 				stat.setInt(5, fi.getDauerMin());
 				stat.setInt(6, fi.getID());
 				stat.execute();

@@ -15,9 +15,7 @@
 </style>
 </head>
 <body>
-	<section class="container">
-	<form action="UpdateFilm" method="post">
-	
+	<section class="container">	
 	<font size=6xp><u>Folgende Filme gibt es:</u></font>
 	<table>
 		<colgroup>
@@ -26,7 +24,7 @@
 		<% 
 			ArrayList<Film> filme=(ArrayList<Film>)session.getAttribute("liste");
 			int i = 0;
-			for(i = 0;i < 1;i++){	
+			for(i = 0;i < filme.size()-1;i++){	
 				if(filme.get(i) == null){
 					break;
 				}
@@ -52,14 +50,21 @@
 				<td><input type="text" id="3D"value="<%=filme.get(i).getIst3D()%>"/></td>
 			</tr>
 			<tr>
-				<td align="right"><input id="id" type="submit" name="update" value="update" /></td>
-				<td align="left"><input id="id" type="submit" name="delete"  value="delete" /></td>
+				<td>
+					<form action="UpdateFilmServlet" method="post">
+						<input id="id" type="submit" value="update" />
+					</form>
+				</td>
+				<td>
+					<form action="DeleteFilmServlet" method="post">
+						<input id="id" type="submit" value="delete" />
+					</form>
+				</td>
 			</tr>
 		<% 	
 			}
 		%>
 	</table>
-	</form>
 	</section>
 </body>
 </html>

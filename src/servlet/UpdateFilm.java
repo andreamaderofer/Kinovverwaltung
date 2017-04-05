@@ -17,7 +17,7 @@ import models.Film;
 /**
  * Servlet implementation class Film
  */
-@WebServlet("/UpdateFilm")
+@WebServlet("/UpdateFilmServlet")
 public class UpdateFilm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -53,6 +53,9 @@ public class UpdateFilm extends HttpServlet {
 			dreiD = Boolean.parseBoolean(request.getParameter("3D"));
 		}catch(NumberFormatException e){}
 		
+		System.out.println(alter);
+		System.out.println(laenge);
+		System.out.println(dreiD);
 		ArrayList<Film> fListe = DBManager.Instance().getFilme();
 		int fID = Integer.parseInt(request.getParameter("id"));
 		

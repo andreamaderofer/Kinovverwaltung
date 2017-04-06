@@ -39,6 +39,7 @@ public class UpdateFilm extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String name = (String) request.getParameter("name");
 		String genre = (String) request.getParameter("genre");
 		
@@ -46,7 +47,6 @@ public class UpdateFilm extends HttpServlet {
 		int laenge = 0;
 		boolean dreiD = false;
 		
-		System.out.println("UPDATE FILM");
 		try{
 			alter = Integer.parseInt(request.getParameter("alter"));
 			laenge = Integer.parseInt(request.getParameter("dauer"));
@@ -55,9 +55,7 @@ public class UpdateFilm extends HttpServlet {
 		
 		ArrayList<Film> fListe = DBManager.Instance().getFilme();
 		
-		//id des Buttons
-		String par = request.getParameter("0");
-		int fID = Integer.parseInt(par);
+		int fID = Integer.parseInt(request.getParameter("filmID"));
 		
 		for(Film f: fListe){
 			if(f.getID() == fID){
@@ -66,12 +64,13 @@ public class UpdateFilm extends HttpServlet {
 				f.setAltersfreigabe(alter);
 				f.setDauerMin(laenge);
 				f.setIst3D(dreiD);
+				f.save();
 				break;
 			}
 		}
 		
 		HttpSession s = request.getSession();
-		s.setAttribute("liste", fListe);
+		s.setAttribute("liste", DBManager.Instance().getFilme());
 		response.sendRedirect("Film.jsp");
 	}
 }

@@ -607,7 +607,6 @@ public class DBManager {
 			while (rs.next()) {
 				
 				Film film = new Film(rs.getInt("FilmID"), rs.getString("Name"), rs.getString("Genre"), rs.getInt("Altersfreigabe"), rs.getBoolean("3D"), rs.getInt("Dauer"));
-				
 				filme.add(film);
 			}
 			

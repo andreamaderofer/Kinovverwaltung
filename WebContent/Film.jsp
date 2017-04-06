@@ -24,41 +24,40 @@
  		</colgroup>
 		<% 
 			ArrayList<Film> filme=(ArrayList<Film>)session.getAttribute("liste");
-			int i = 0;
-			for(i = 0;i < filme.size()-1;i++){	
-				if(filme.get(i) == null){
-					break;
-				}
+
+			for(Film f: filme){	
+				if(f == null)
+					continue;
 		%>
 			<form action="UpdateFilmServlet" method="post">
 			<tr align="left">
 				<td ><%="Name:" %></td>
-				<td><input type = "name<%=filme.get(i).getID()%>" name ="name"value="<%=filme.get(i).getName()%>"/></td>
+				<td><input type = "text" name = "name" value="<%=f.getName()%>"/></td>
 			</tr>
 			<tr align="left">
 				<td><%="Genre:" %></td>
-				<td><input type = "genre<%=filme.get(i).getID()%>" name="genre"  value="<%=filme.get(i).getGenre()%>"/></td>
+				<td><input type="text" name="genre"  value="<%=f.getGenre()%>"/></td>
 			</tr>
 			<tr align="left">
 				<td><%="Alter:"%></td>
-				<td><input type = "alter<%=filme.get(i).getID()%>" name="alter" value="<%=filme.get(i).getAltersfreigabe()%>"/></td>
+				<td><input type="text" name="alter" value="<%=f.getAltersfreigabe()%>"/></td>
 			</tr>
 			<tr align="left">
 				<td><%="Dauer:" %></td>
-				<td><input type="dauer<%=filme.get(i).getID()%>" name="dauer" value="<%=filme.get(i).getDauerMin()%>"/></td>
+				<td><input type="text" name="dauer" value="<%=f.getDauerMin()%>"/></td>
 			</tr>
 			<tr align="left">
 				<td><%="3D:" %></td>
-				<td><input type="3D<%=filme.get(i).getID()%>" name="3D" value="<%=filme.get(i).getIst3D()%>"/></td>
+				<td><input type="text" name="3D" value="<%=f.getIst3D()%>"/></td>
 			</tr>
 			<tr>
 				<td>
-					<button type="submit" name="<%=i%>" value="<%=i%>">update</button>
+					<button type="submit" name="filmID" value="<%=f.getID()%>">Update</button>
 				</td>
 			</form>
 					<td>
 					<form action="DeleteFilmServlet" method="post">
-						<button type="submit" name="<%=i%>" value="<%=i%>">delete</button>
+						<button type="submit" name="filmID" value="<%=f.getID()%>">Delete</button>
 					</form>
 				</td>
 			</tr>

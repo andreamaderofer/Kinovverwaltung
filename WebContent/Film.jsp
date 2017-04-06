@@ -29,7 +29,7 @@
 				return;
 			}
 		
-			ArrayList<Film> filme=(ArrayList<Film>)session.getAttribute("liste");
+			ArrayList<Film> filme=(ArrayList<Film>) session.getAttribute("liste");
 		
 			for(Film f: filme){	
 				if(f == null)

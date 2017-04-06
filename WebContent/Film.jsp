@@ -116,6 +116,7 @@
 		</td>
 	</tr>
 	</table>
+			<button type="submit" name="filmID" >New</button>
 	</form>
 	</section>
 </body>

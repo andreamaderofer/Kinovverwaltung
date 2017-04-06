@@ -71,6 +71,52 @@
 			}
 		%>
 	</table>
+	<br /><br />
+	<form action="NewFilmServlet" method="post">
+		<h1>Film hinzufügen:</h1>
+	<table>
+	<tr align="left">
+		<td>
+		Name: 
+		</td>
+		<td>
+		<input type="text" name="name"/> <br />
+		</td>
+	</tr>	
+	<tr  align="left">	
+		<td>
+		Genre: 
+		</td>
+		<td>
+			<input type="text" name="genre" /> <br />
+		</td>
+	</tr>
+	<tr  align="left">
+		<td>	
+		Alter: 
+		</td>
+		<td>
+			<input type="text" name="alter" /> <br />
+		</td>
+	</tr>
+	<tr align="left">
+		<td>	
+		Dauer: 
+		</td>
+		<td>
+		<input type="text" name="dauer" /> <br />
+		</td>
+	</tr>
+	<tr align="left">
+		<td>	
+		3D: 
+		</td>
+		<td>
+		<input type="text" name="3D" /> <br />
+		</td>
+	</tr>
+	</table>
+	</form>
 	</section>
 </body>
 </html>

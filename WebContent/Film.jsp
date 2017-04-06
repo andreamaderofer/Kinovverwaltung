@@ -23,8 +23,14 @@
  	 		<col width=80>
  		</colgroup>
 		<% 
-			ArrayList<Film> filme=(ArrayList<Film>)session.getAttribute("liste");
 
+			if(session.getAttribute("liste") == null){
+				response.sendRedirect("index.jsp");
+				return;
+			}
+		
+			ArrayList<Film> filme=(ArrayList<Film>)session.getAttribute("liste");
+		
 			for(Film f: filme){	
 				if(f == null)
 					continue;

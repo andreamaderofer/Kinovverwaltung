@@ -16,6 +16,7 @@
 </head>
 <body>
 	<section class="container">	
+	
 	<font size=6xp><u>Folgende Filme gibt es:</u></font>
 	<table>
 		<colgroup>
@@ -29,6 +30,7 @@
 					break;
 				}
 		%>
+			<form action="UpdateFilmServlet" method="post">
 			<tr align="left">
 				<td ><%="Name:" %></td>
 				<td><input type = "name<%=filme.get(i).getID()%>" name ="name"value="<%=filme.get(i).getName()%>"/></td>
@@ -51,13 +53,12 @@
 			</tr>
 			<tr>
 				<td>
-					<form action="UpdateFilmServlet" method="post">
-						<input id="<%=i%>" type="submit" value="update" />
-					</form>
+					<button type="submit" name="<%=i%>" value="<%=i%>">update</button>
 				</td>
-				<td>
+			</form>
+					<td>
 					<form action="DeleteFilmServlet" method="post">
-						<input id="<%=i%>" type="submit" value="delete" />
+						<button type="submit" name="<%=i%>" value="<%=i%>">delete</button>
 					</form>
 				</td>
 			</tr>

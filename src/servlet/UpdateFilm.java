@@ -53,11 +53,11 @@ public class UpdateFilm extends HttpServlet {
 			dreiD = Boolean.parseBoolean(request.getParameter("3D"));
 		}catch(NumberFormatException e){}
 		
-		System.out.println(alter);
-		System.out.println(laenge);
-		System.out.println(dreiD);
 		ArrayList<Film> fListe = DBManager.Instance().getFilme();
-		int fID = Integer.parseInt(request.getParameter("id"));
+		
+		//id des Buttons
+		String par = request.getParameter("0");
+		int fID = Integer.parseInt(par);
 		
 		for(Film f: fListe){
 			if(f.getID() == fID){
